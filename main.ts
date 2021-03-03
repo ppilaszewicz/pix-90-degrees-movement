@@ -14,6 +14,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     let number = 0
+    let guess = 0
     if (guess == number) {
         basic.showString("Good Guess")
     } else if (guess > number) {
@@ -23,10 +24,12 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    guess = guess - 1
-    basic.showNumber(guess)
+    for (let index = 0; index <= 4; index++) {
+        pix.move(4)
+        pix.turn(Direction.Right, 90)
+        basic.pause(100)
+    }
 })
-let guess = 0
 let pix: game.LedSprite = null
 pix = game.createSprite(0, 0)
 basic.forever(function () {
